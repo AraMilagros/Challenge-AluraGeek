@@ -15,6 +15,7 @@ export default function Formulario() {
   return (
 
     <div className='container-form'>
+      <h2 className='form__tittle'>Agregar Producto:</h2>
       <form className="formulario" name="form" onSubmit={submit}>
         <input id="input--nombre" className='form--input' type='text' name="nombre" placeholder=' nombre...' />
         <input id="input-precio" className='form--input' type='number' name="precio" placeholder=' precio...' />
