@@ -154,7 +154,7 @@ main{
 }
 
 .form__btns .btn{
-    padding: 8px 40px;
+    padding: 8px 30px;
     border-radius: 10px;
     border: 3px solid var(--azulOscuro)
 }
@@ -185,4 +185,77 @@ footer p{
 
 footer #header{
     box-shadow: none;
+}
+
+
+@media (min-width: 1024px) {
+}
+
+@media (max-width: 853px) {
+
+    main{
+        margin: 5em 0;
+        gap:0;
+        background: greenyellow;
+    }
+
+    .product{
+        grid-template-columns: repeat(2, 190px);
+    }
+    .form__btns{
+        padding: 8px 20px;
+        /* flex-direction: column; */
+        border:2px solid red;
+    }    
+
+    .formulario{
+        width: 30vw;
+    }
+
+}
+@media (max-width: 600px) {
+    main{
+        background: #9303a6;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5em;
+    }
+
+    .container-form{
+        border:2px solid white;
+        width: 100%;
+    }
+
+    .formulario{
+        border:2px solid greenyellow;
+        width: 100%;
+        align-items:center;
+    }
+
+    .form--input{
+        width: 290px;
+    }
+
+    .form__btns{
+        justify-content: space-around;
+        gap: 2em;
+    }
+}
+
+@media (max-width: 392px){
+    main{
+        background: gold;
+        margin-top: 2em;
+    }
+
+    .product__tittle, .form__tittle{
+        margin-bottom: 1em;
+    }
+    .product{
+        grid-template-columns: repeat(1, 190px);
+        height: 25em;
+
+    }
+
+
 }

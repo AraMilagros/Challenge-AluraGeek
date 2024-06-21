@@ -13,7 +13,7 @@ export default function ItemProducto() {
         <div className='text--price-icon'>
           <span className='text--price'>$ 60,00</span>
           <span className='text-icon'>
-            <i class="fa-solid fa-trash"></i>
+            <i className="fa-solid fa-trash"></i>
           </span>
         </div>
       </div>

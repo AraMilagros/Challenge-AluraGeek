@@ -1,0 +1,20 @@
+[
+{
+        "id": "",
+        "nombre": "Gameboy",
+        "precio": "$120.000",
+        "pathImg": "./gameboy.jpg"
+    },
+    {
+        "id": "",
+        "nombre": "Headphones",
+        "precio": "$100.000",
+        "pathImg": "./headphones.jpg"
+    },
+    {
+        "id": "",
+        "nombre": "Play Station",
+        "precio": "$250.000",
+        "pathImg": "./playstation.jpg"
+    }
+]
