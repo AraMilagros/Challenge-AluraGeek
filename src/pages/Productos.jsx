@@ -6,17 +6,6 @@ export default function Productos() {
       <h2 className='product__tittle'>Mis productos:</h2>
       <section className='product'>
         <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
-        <ItemProducto />
       </section>
     </div>
 

@@ -90,6 +90,7 @@ main{
     color:var(--textoPrincipal);
     border-radius: 10px;
     width: max-content;
+    height: max-content;
     padding: .5em;
 }
 
@@ -111,6 +112,9 @@ main{
     margin: .5em 0;
 }
 
+.text--tittle{
+    width: 170px;
+}
 .text--price-icon{
     display: flex;
     justify-content: space-between;
@@ -191,12 +195,14 @@ footer #header{
 @media (min-width: 1024px) {
 }
 
-@media (max-width: 853px) {
+/* @media (max-width: 853px) {
 
     main{
         margin: 5em 0;
         gap:0;
         background: greenyellow;
+        flex-direction: column;
+        align-items: center;
     }
 
     .product{
@@ -204,7 +210,6 @@ footer #header{
     }
     .form__btns{
         padding: 8px 20px;
-        /* flex-direction: column; */
         border:2px solid red;
     }    
 
@@ -212,9 +217,12 @@ footer #header{
         width: 30vw;
     }
 
-}
-@media (max-width: 600px) {
+} */
+
+@media (max-width: 853px) {
     main{
+        margin: 5em 0;
+        gap:0;
         background: #9303a6;
         flex-direction: column;
         align-items: center;
@@ -242,6 +250,12 @@ footer #header{
     }
 }
 
+@media (max-width: 600px) {
+    .product{
+        grid-template-columns: repeat(2, 190px);
+        
+    }
+}
 @media (max-width: 392px){
     main{
         background: gold;
