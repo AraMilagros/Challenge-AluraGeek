@@ -12,11 +12,16 @@ export default function Principal() {
     const agregarNuevoProducto = (obj, bandera) => {
         console.log("PRINCIPAL")
         console.log(obj)
+        if(bandera){
+            console.log("desde dentro de la funcion")
+            setNuevoProducto(obj);
+            setEstado(bandera);
+        }
     }
 
     return (
         <main>
-            <Productos />
+            <Productos nuevoProducto={nuevoProducto} estado={estado} />
             <Formulario enviar={agregarNuevoProducto} />
         </main>
     )

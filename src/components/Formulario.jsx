@@ -36,20 +36,20 @@ export default function Formulario(props) {
       <form className="formulario" name="form" onSubmit={submitForm}>
         <input id="input--nombre" className='form--input' type='text' 
           name="nombre" placeholder=' nombre...' 
-          pattern='{3,}' title='Mínimo 3 carácteres' 
+          // pattern='/{3,}/' title='Mínimo 3 carácteres' 
           onChange={(e) => setNombre(e.target.value)}    
           required
           />
         <input id="input-precio" className='form--input' type='text' 
           name="precio" placeholder=' precio...' 
-          pattern='[0-9]+${3,}' title='Sólo números. Mínimo 3 números' 
+          // pattern='[0-9]+${3,}' title='Sólo números. Mínimo 3 números' 
           onChange={(e)=>setPrecio(e.target.value)}
           required
           />
         <input id="input-imagen" className='form--input' type='text' 
           name="imagen" placeholder=' imagen...' 
           onChange={(e)=>setPathImg(e.target.value)}
-          pattern='{7,}' title='Debe ingresar el nombre del archivo.extensión'  
+          // pattern='/{7,}/' title='Debe ingresar el nombre del archivo.extensión'  
           required
           />
 

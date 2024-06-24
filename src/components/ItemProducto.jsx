@@ -40,8 +40,13 @@ export default function ItemProducto(props) {
 
   useEffect(() => {
     setListado(duplicado);
-    console.log(duplicado);
   }, [duplicado]);
+
+  useEffect(() => {
+    props.actualizarProductos(duplicado, setDuplicado);
+    setListado(duplicado)
+    
+  }, [props.nuevoProducto])
 
   return (
     <>
