@@ -1,28 +1,28 @@
 {
   "productos": [
     {
-      "id": "0.21727277282088764",
-      "nombre": "Tamy",
-      "precio": "1000",
-      "pathImg": "./gameboy.jpg"
+      "id": "0.6892556114569759",
+      "nombre": "Consola ",
+      "precio": "15000",
+      "pathImg": "gameboy"
     },
     {
-      "id": "0.9509390859112594",
-      "nombre": "Tamy",
-      "precio": "1000",
-      "pathImg": "./gameboy.jpg"
+      "id": "0.31471137186555453",
+      "nombre": "Auriculares inalámbricos",
+      "precio": "10000",
+      "pathImg": "headphones"
     },
     {
-      "id": "0.16711257571385496",
-      "nombre": "hola",
-      "precio": "1000",
-      "pathImg": "./gameboy.jpg"
+      "id": "0.3989599927699481",
+      "nombre": " Joystick Ps4",
+      "precio": "8000",
+      "pathImg": "playstation"
     },
     {
-      "id": "0.9176106085599607",
-      "nombre": "Tamy",
-      "precio": "1000",
-      "pathImg": "./gameboy.jpg"
+      "id": "0.3430481844307034",
+      "nombre": " Joystick Ps4",
+      "precio": "8000",
+      "pathImg": "playstation"
     }
   ]
 }

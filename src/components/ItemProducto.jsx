@@ -56,12 +56,13 @@ export default function ItemProducto(props) {
           return (
             <div key={item.id} className='product__item'>
               <div className='product-img'>
-                <img src={imgs(item.pathImg)} alt="img" />
+                {/* <img src={imgs(item.pathImg)} alt="img" /> */}
+                <img src={imgs(`./${item.pathImg}.jpg`)} alt="img" />
               </div>
               <div className='product__text'>
                 <h3 className='text--tittle'>{item.nombre}</h3>
                 <div className='text--price-icon'>
-                  <span className='text--price'>{item.precio}</span>
+                  <span className='text--price'>{`$ ${item.precio}`}</span>
                   <span className='text-icon'>
                     <i className="fa-solid fa-trash"
                       onClick={() => eliminarProducto(item.id)}></i>

@@ -175,6 +175,13 @@ main{
     color:var(--azulOscuro);
 }
 
+#spanImage{
+    color: var(--azulOscuro);
+    margin-top: -1.6em;
+    margin-left: 5px;
+    /* border:2px solid red; */
+}
+
 /* SECCION DE FOOTER  */
 footer{
     background: var(--fondoPrincipal);

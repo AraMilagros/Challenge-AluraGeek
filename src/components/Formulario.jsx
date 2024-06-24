@@ -5,7 +5,7 @@ export default function Formulario(props) {
   const [nombre, setNombre] = useState();
   const [precio, setPrecio] = useState();
   const [pathImg, setPathImg] = useState();
-
+  const imagenesDisponibles = ['gameboy', 'headphones', 'playstation'];
 
   const crearProducto = async () => {
     const conex = await fetch("http://localhost:3000/productos", {
@@ -27,7 +27,15 @@ export default function Formulario(props) {
 
   const submitForm = (e) => {
     e.preventDefault();
-    crearProducto();
+
+    if(imagenesDisponibles.includes(pathImg)){
+      crearProducto();
+    }else{
+      const btnImage = document.querySelector('#input-imagen');
+      btnImage.value='';
+      btnImage.placeholder='Intente una de las opciones';
+    }
+
   }
 
   const creado = () => {
@@ -45,7 +53,7 @@ export default function Formulario(props) {
     setNombre('');
     setPrecio('');
     setPathImg('');
-    
+
     const inputs = document.querySelectorAll('.form--input');
 
     for (let index = 0; index < inputs.length; index++) {
@@ -65,9 +73,9 @@ export default function Formulario(props) {
           onChange={(e) => setNombre(e.target.value)}
           required
         />
-        <input id="input-precio" className='form--input' type='text'
+        <input id="input-precio" className='form--input' type='number'
           name="precio" placeholder=' precio...'
-          // pattern='[0-9]+${3,}' title='Sólo números. Mínimo 3 números' 
+          pattern='[0-9]+${3,}' title='Sólo números. Mínimo 3 números' 
           onChange={(e) => setPrecio(e.target.value)}
           required
         />
@@ -77,6 +85,7 @@ export default function Formulario(props) {
           // pattern='/{7,}/' title='Debe ingresar el nombre del archivo.extensión'  
           required
         />
+        <span id="spanImage">Opciones: gameboy - playstation - headphones</span>
 
         <div className='form__btns'>
           <button id="btn-submit" type="submit" className="btn">Enviar</button>
