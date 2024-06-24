@@ -1,27 +1,21 @@
 {
   "productos": [
     {
-      "id": "",
-      "nombre": "Gameboy",
-      "precio": "$120.000",
+      "id": "0.9492383395372299",
+      "nombre": "Tamy",
+      "precio": "10000",
       "pathImg": "./gameboy.jpg"
     },
     {
-      "id": "",
-      "nombre": "Headphones",
-      "precio": "$100.000",
-      "pathImg": "./headphones.jpg"
+      "id": "0.2352269499941264",
+      "nombre": "Tamy",
+      "precio": "10000",
+      "pathImg": "./gameboy.jpg"
     },
     {
-      "id": "",
-      "nombre": "Play Station",
-      "precio": "$250.000",
-      "pathImg": "./playstation.jpg"
-    },
-    {
-      "id": 0.1499572024849507,
-      "nombre": "Celular como gameboy",
-      "precio": "120000",
+      "id": "0.09340126648572022",
+      "nombre": "Tamy",
+      "precio": "10000",
       "pathImg": "./gameboy.jpg"
     }
   ]

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import game from '../assets/img/gameboy.jpg';
-
-export default function ItemProducto() {
+export default function ItemProducto(props) {
 
   const imgs = require.context('../assets/img/', true);
   const [listado, setListado] = useState([]);
+  const [duplicado, setDuplicado] = useState([]);
 
   useEffect(() => {
     const conexionApi = async () => {
@@ -14,21 +13,42 @@ export default function ItemProducto() {
         const response = await fetch("http://localhost:3000/productos");
         const data = await response.json();
         setListado(data);
+        setDuplicado(data);
       } catch (err) {
         console.log("Error al obtener datos: ", err);
       }
     };
 
     conexionApi();
-    console.log(listado)
   }, []);
-  // src={logo(props.logo)}
+
+  const eliminarProducto = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3000/productos/${id}`, {
+        method: 'DELETE',
+      });
+      // const convertido = await response.json();
+      if (response.ok) {
+        const actualizar = duplicado.filter((item) => item.id !== id);
+        setDuplicado(actualizar);
+      }
+      // return convertido;
+    } catch (err) {
+      console.log("Error conex al querer eliminar elemento. " + err);
+    }
+  }
+
+  useEffect(() => {
+    setListado(duplicado);
+    console.log(duplicado);
+  }, [duplicado]);
+
   return (
     <>
       {
-        listado.map((item, id) => {
+        listado.map(item => {
           return (
-            <div key={id} className='product__item'>
+            <div key={item.id} className='product__item'>
               <div className='product-img'>
                 <img src={imgs(item.pathImg)} alt="img" />
               </div>
@@ -37,7 +57,8 @@ export default function ItemProducto() {
                 <div className='text--price-icon'>
                   <span className='text--price'>{item.precio}</span>
                   <span className='text-icon'>
-                    <i className="fa-solid fa-trash"></i>
+                    <i className="fa-solid fa-trash"
+                      onClick={() => eliminarProducto(item.id)}></i>
                   </span>
                 </div>
               </div>
@@ -48,18 +69,3 @@ export default function ItemProducto() {
     </>
   )
 }
-
-{/* <div className='product__item'>
-      <div className='product-img'>
-        <img src={game} alt="img" />
-      </div>
-      <div className='product__text'>
-        <h3 className='text--tittle'>Stormtrooper</h3>
-        <div className='text--price-icon'>
-          <span className='text--price'>$ 60,00</span>
-          <span className='text-icon'>
-            <i onClick={() => verListado} className="fa-solid fa-trash"></i>
-          </span>
-        </div>
-      </div>
-    </div> */}

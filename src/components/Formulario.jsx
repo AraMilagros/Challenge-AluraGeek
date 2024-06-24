@@ -1,38 +1,32 @@
 import React, { useState } from 'react'
 
-
-{/* <input id="inputName" className="formcontato__input"
-  type="text" name="nombre"
-  onChange={(e) => setNombre(e.target.value)}
-  pattern='^[a-zA-Z ]+${3,}' title="Sólo letras. Mínimo 3 letras."
-  required
-/> */}
-export default function Formulario() {
+export default function Formulario(props) {
 
   const [nombre, setNombre] = useState();
   const [precio, setPrecio] = useState();
   const [pathImg, setPathImg] = useState();
 
 
-  const agregarProducto = async () => {
+  const crearProducto = async () => {
     const conex = await fetch("http://localhost:3000/productos", {
       method: 'POST',
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
-        id: Math.random(),
+        id: Math.random().toString(),
         nombre: nombre,
         precio: precio,
         pathImg: pathImg
       })
     })
-    const conexConvertida = conex.json();
-    return conexConvertida;
+    const conexConvertida = await conex.json();
+    // return conexConvertida;
+    props.enviar(conexConvertida, true);
   }
 
 
   const submitForm = (e) => {
     e.preventDefault();
-    agregarProducto();
+    crearProducto();
   }
 
   return (
@@ -42,17 +36,21 @@ export default function Formulario() {
       <form className="formulario" name="form" onSubmit={submitForm}>
         <input id="input--nombre" className='form--input' type='text' 
           name="nombre" placeholder=' nombre...' 
-          // pattern='/^([a-zA-Z0-9_-]){1,16}$/+${3,}' title='Mínimo 3 carácteres' 
+          pattern='{3,}' title='Mínimo 3 carácteres' 
           onChange={(e) => setNombre(e.target.value)}    
+          required
           />
         <input id="input-precio" className='form--input' type='text' 
           name="precio" placeholder=' precio...' 
-          pattern='[0-9]+' title='Sólo números' 
+          pattern='[0-9]+${3,}' title='Sólo números. Mínimo 3 números' 
           onChange={(e)=>setPrecio(e.target.value)}
+          required
           />
         <input id="input-imagen" className='form--input' type='text' 
           name="imagen" placeholder=' imagen...' 
-          onChange={(e)=>setPathImg(e.target.value)}  
+          onChange={(e)=>setPathImg(e.target.value)}
+          pattern='{7,}' title='Debe ingresar el nombre del archivo.extensión'  
+          required
           />
 
         <div className='form__btns'>
