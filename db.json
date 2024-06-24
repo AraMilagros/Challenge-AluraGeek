@@ -23,6 +23,12 @@
       "nombre": " Joystick Ps4",
       "precio": "8000",
       "pathImg": "playstation"
+    },
+    {
+      "id": "0.389505762871196",
+      "nombre": "consola 2",
+      "precio": "2500",
+      "pathImg": "gameboy"
     }
   ]
 }
