@@ -1,33 +1,27 @@
 {
   "productos": [
     {
-      "id": "0.7666342770011205",
+      "id": "0.21727277282088764",
       "nombre": "Tamy",
-      "precio": "10000",
+      "precio": "1000",
       "pathImg": "./gameboy.jpg"
     },
     {
-      "id": "0.8580035152250307",
-      "nombre": "lucia galante",
-      "precio": "10",
-      "pathImg": "./playstation.jpg"
-    },
-    {
-      "id": "0.22596369877095457",
+      "id": "0.9509390859112594",
       "nombre": "Tamy",
-      "precio": "10000",
+      "precio": "1000",
       "pathImg": "./gameboy.jpg"
     },
     {
-      "id": "0.8374370833618019",
-      "nombre": "lucia galante",
-      "precio": "10000",
+      "id": "0.16711257571385496",
+      "nombre": "hola",
+      "precio": "1000",
       "pathImg": "./gameboy.jpg"
     },
     {
-      "id": "0.7851533994568449",
-      "nombre": "lucia galante",
-      "precio": "10000",
+      "id": "0.9176106085599607",
+      "nombre": "Tamy",
+      "precio": "1000",
       "pathImg": "./gameboy.jpg"
     }
   ]

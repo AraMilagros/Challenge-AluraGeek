@@ -27,12 +27,10 @@ export default function ItemProducto(props) {
       const response = await fetch(`http://localhost:3000/productos/${id}`, {
         method: 'DELETE',
       });
-      // const convertido = await response.json();
       if (response.ok) {
         const actualizar = duplicado.filter((item) => item.id !== id);
         setDuplicado(actualizar);
       }
-      // return convertido;
     } catch (err) {
       console.log("Error conex al querer eliminar elemento. " + err);
     }
@@ -42,10 +40,13 @@ export default function ItemProducto(props) {
     setListado(duplicado);
   }, [duplicado]);
 
+  //este useEffect sera llamado cuando el obj nuevoProducto enviado desde otros componentes (Principal > Productos > ItemProducto) 
+  // entonces, cuando nuevoProducto sufra algun cambio, se llamara a la funcion pasada desde Productos (actualizarProductos)
+    // se enviara las listas duplicadas de los productos y una vez que se haya realizado, regresara para modificar la lista original
+
   useEffect(() => {
     props.actualizarProductos(duplicado, setDuplicado);
     setListado(duplicado)
-    
   }, [props.nuevoProducto])
 
   return (

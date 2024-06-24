@@ -2,8 +2,8 @@
     --fondoPrincipal: #5d04d9;
     --azulOscuro: #03318c;
     --moradoOscuro: #8c0375;
-    --moradolila: #c004d9;
-    --morado: #9303a6;
+    /* --moradolila: #c004d9; */
+    /* --morado: #9303a6; */
     --textoPrincipal: #ffffff;
     --titulos-bordes: #000000;
 }
@@ -13,11 +13,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/* h1{
-    font-family: "VT323";
-} */
 
 /*! SECCION DE HEADER  */
 
@@ -108,7 +103,6 @@ main{
 }
 
 .product__text{
-    border:2px solid blue;
     margin: .5em 0;
 }
 
@@ -160,12 +154,20 @@ main{
 .form__btns .btn{
     padding: 8px 30px;
     border-radius: 10px;
-    border: 3px solid var(--azulOscuro)
+    border: 3px solid var(--azulOscuro);
+    cursor: pointer;
 }
 
 #btn-submit{
     background: var(--azulOscuro);
-    color: var(--textoPrincipal)
+    color: var(--textoPrincipal);
+    transition: all .5s ease;
+}
+
+#btn-submit.creado{
+    background: var(--moradoOscuro);
+    border: 2px solid var(--moradoOscuro);
+    color: var(--textoPrincipal);
 }
 
 #btn-limpiar{
@@ -192,50 +194,20 @@ footer #header{
 }
 
 
-@media (min-width: 1024px) {
-}
-
-/* @media (max-width: 853px) {
-
-    main{
-        margin: 5em 0;
-        gap:0;
-        background: greenyellow;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product{
-        grid-template-columns: repeat(2, 190px);
-    }
-    .form__btns{
-        padding: 8px 20px;
-        border:2px solid red;
-    }    
-
-    .formulario{
-        width: 30vw;
-    }
-
-} */
-
 @media (max-width: 853px) {
     main{
         margin: 5em 0;
         gap:0;
-        background: #9303a6;
         flex-direction: column;
         align-items: center;
         row-gap: 5em;
     }
 
     .container-form{
-        border:2px solid white;
         width: 100%;
     }
 
     .formulario{
-        border:2px solid greenyellow;
         width: 100%;
         align-items:center;
     }
@@ -258,7 +230,6 @@ footer #header{
 }
 @media (max-width: 392px){
     main{
-        background: gold;
         margin-top: 2em;
     }
 
@@ -268,7 +239,6 @@ footer #header{
     .product{
         grid-template-columns: repeat(1, 190px);
         height: 25em;
-
     }
 
 
