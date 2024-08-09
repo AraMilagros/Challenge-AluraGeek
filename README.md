@@ -11,4 +11,4 @@ npm install
 ```
 
 - DemoLive [AluraGeek-Challenge](https://alurageekchallenge.netlify.app/)
-- Repo del backend [aluraflix-backend](https://github.com/AraMilagros/alurageek-backend.git)
+- Repo del backend [alurageek-backend](https://github.com/AraMilagros/alurageek-backend.git)
