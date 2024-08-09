@@ -5,12 +5,13 @@ export default function ItemProducto(props) {
   const imgs = require.context('../assets/img/', true);
   const [listado, setListado] = useState([]);
   const [duplicado, setDuplicado] = useState([]);
+  const URL = 'https://alurageek-backend.onrender.com/api/items';
 
   useEffect(() => {
     const conexionApi = async () => {
 
       try {
-        const response = await fetch("http://localhost:3000/productos");
+        const response = await fetch(URL);
         const data = await response.json();
         setListado(data);
         setDuplicado(data);
@@ -24,11 +25,11 @@ export default function ItemProducto(props) {
 
   const eliminarProducto = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/productos/${id}`, {
+      const response = await fetch(`${URL}/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
-        const actualizar = duplicado.filter((item) => item.id !== id);
+        const actualizar = duplicado.filter((item) => item._id !== id);
         setDuplicado(actualizar);
       }
     } catch (err) {
@@ -54,18 +55,17 @@ export default function ItemProducto(props) {
       {
         listado.map(item => {
           return (
-            <div key={item.id} className='product__item'>
+            <div key={item._id} className='product__item'>
               <div className='product-img'>
-                {/* <img src={imgs(item.pathImg)} alt="img" /> */}
-                <img src={imgs(`./${item.pathImg}.jpg`)} alt="img" />
+                <img src={item.imagen} alt="img" />
               </div>
               <div className='product__text'>
                 <h3 className='text--tittle'>{item.nombre}</h3>
                 <div className='text--price-icon'>
                   <span className='text--price'>{`$ ${item.precio}`}</span>
                   <span className='text-icon'>
-                    <i className="fa-solid fa-trash"
-                      onClick={() => eliminarProducto(item.id)}></i>
+                    <i className="fa-solid fa-trash trash-icon"
+                      onClick={() => eliminarProducto(item._id)}></i>
                   </span>
                 </div>
               </div>

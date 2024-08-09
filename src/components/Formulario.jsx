@@ -4,21 +4,23 @@ export default function Formulario(props) {
 
   const [nombre, setNombre] = useState();
   const [precio, setPrecio] = useState();
-  const [pathImg, setPathImg] = useState();
+  const [imagen, setImagen] = useState();
   const imagenesDisponibles = ['gameboy', 'headphones', 'playstation'];
+  const URL ='https://alurageek-backend.onrender.com/api/items';
 
   const crearProducto = async () => {
-    const conex = await fetch("http://localhost:3000/productos", {
+    const conex = await fetch(URL, {
       method: 'POST',
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
-        id: Math.random().toString(),
+        // id: Math.random().toString(),
         nombre: nombre,
         precio: precio,
-        pathImg: pathImg
+        imagen: imagen
       })
     })
     const conexConvertida = await conex.json();
+    // console.log(conexConvertida);
     // return conexConvertida;
     creado();
     props.enviar(conexConvertida, true);
@@ -27,15 +29,7 @@ export default function Formulario(props) {
 
   const submitForm = (e) => {
     e.preventDefault();
-
-    if(imagenesDisponibles.includes(pathImg)){
-      crearProducto();
-    }else{
-      const btnImage = document.querySelector('#input-imagen');
-      btnImage.value='';
-      btnImage.placeholder='Intente una de las opciones';
-    }
-
+    crearProducto();
   }
 
   const creado = () => {
@@ -52,7 +46,7 @@ export default function Formulario(props) {
   const limpiar = () => {
     setNombre('');
     setPrecio('');
-    setPathImg('');
+    setImagen('');
 
     const inputs = document.querySelectorAll('.form--input');
 
@@ -81,11 +75,11 @@ export default function Formulario(props) {
         />
         <input id="input-imagen" className='form--input' type='text'
           name="imagen" placeholder=' imagen...'
-          onChange={(e) => setPathImg(e.target.value)}
+          onChange={(e) => setImagen(e.target.value)}
           // pattern='/{7,}/' title='Debe ingresar el nombre del archivo.extensión'  
           required
         />
-        <span id="spanImage">Opciones: gameboy - playstation - headphones</span>
+        <span id="spanImage">Nota: en imagen se debe ingresar la url de la imagen.</span>
 
         <div className='form__btns'>
           <button id="btn-submit" type="submit" className="btn">Enviar</button>

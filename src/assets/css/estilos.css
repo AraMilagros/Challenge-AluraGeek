@@ -115,6 +115,10 @@ main{
     margin-top: .5em;
 }
 
+.trash-icon{
+    cursor: pointer;
+}
+
 /* SECCION DE FORMULARIO */
 .container-form{
     display: flex;
